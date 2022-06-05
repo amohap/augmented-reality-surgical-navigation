@@ -409,7 +409,7 @@ public class SceneManager : MonoBehaviour
     // code for navigation task
     private void LeftNavigation(){
 
-        if (!isRightNavigating){ // only one task at a time
+        if (!isRightNavigating && VertebraModel.GetComponent<Renderer>().enabled == true){ // only one task at a time 
             // disable the planned trajectory and the entry point
             if (VertebraModel.transform.GetChild(4).gameObject.activeSelf){
                 isLeftNavigating = false;
@@ -434,7 +434,7 @@ public class SceneManager : MonoBehaviour
 
     private void RightNavigation(){
 
-        if (!isLeftNavigating){ // only one task at a time
+        if (!isLeftNavigating && VertebraModel.GetComponent<Renderer>().enabled == true){ // only one task at a time
             // disable the planned trajectory and the entry point
             if (VertebraModel.transform.GetChild(5).gameObject.activeSelf){
                 isRightNavigating = false;
